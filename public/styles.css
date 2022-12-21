@@ -1,6 +1,5 @@
 :root{
     --main-font:'Alumni Sans Pinstripe', sans-serif;
-
 }
 
 *{
@@ -25,6 +24,17 @@ body{
     padding:20px;
 }
 
+
+#start-button{
+    padding:10px 30px;
+    outline:none;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-family:var(--main-font);
+    font-size:1.3rem;
+    display:flex;
+}
 .container h1{
     font-size:3rem;
 }

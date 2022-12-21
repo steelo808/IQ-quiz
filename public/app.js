@@ -11,7 +11,7 @@ $start.on('click', ()=>{
 $.get('/questions').then( (data)=>{
         console.log(data);
 
-        for(let i = 0; i < data.length; i++){
+        for(let i = 0; i <= 1; i++){
             //
             console.log(data[0].question);
             console.log(data[0].answer_1);
@@ -23,17 +23,18 @@ $.get('/questions').then( (data)=>{
             const $form = $('.quiz-form');
 
             const $question_wrapper = $('.question');
-            const $question_text  = $(`<h2>${data[0].question}</h2>`);
+            const $question_text  = $(`<h2>${data[i].question}</h2>`);
 
             const $grid_item = $('.grid-item');
+            
             const $input1 = $('<input type ="radio" name="q1" value = "A" id="q1">');
-            const $label1 =$(`<label for="q1" class="label">${data[0].answer_1}</label>`)
+            const $label1 =$(`<label for="q1" class="label">${data[i].answer_1}</label>`)
             const $input2 = $('<input type ="radio" name="q2" value = "B" id="q2">');
-            const $label2 =$(`<label for="q2" class="label">${data[0].answer_2}</label>`)
+            const $label2 =$(`<label for="q2" class="label">${data[i].answer_2}</label>`)
             const $input3 = $('<input type ="radio" name="q3" value = "C" id="q3">');
-            const $label3 =$(`<label for="q3" class="label">${data[0].answer_3}</label>`)
+            const $label3 =$(`<label for="q3" class="label">${data[i].answer_3}</label>`)
             const $input4 = $('<input type ="radio" name="q4" value = "D" id="q4">');
-            const $label4 =$(`<label for="q4" class="label">${data[0].answer_4}</label>`)
+            const $label4 =$(`<label for="q4" class="label">${data[i].answer_4}</label>`)
             const $btn1 = $('<input type="submit" class="btn" value="Next Question">')
             //
             $form.removeClass("hide");
@@ -70,7 +71,7 @@ $btn.on('click', () =>{
     $userAnswers.forEach((answer, index)=>{
         if(answer === $correctAnswers[index]){
             $score+=25;
-            $currentScore.innerText = $score
+
         }
     })
 
