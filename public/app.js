@@ -62,23 +62,17 @@ $.get('/questions').then( (data)=>{
     });
 });
 
-
-
-
-
-$form.on('submit', e =>{
-    e.preventDefault();
-
-    let $score = 0;
+let $score = 0;
+const $currentScore = $('.iq-number');
+$btn.on('click', () =>{
 
     const $userAnswers = [$form.q1.val, $form.q2.val, $form.q3.val, $form.q4.val];
-
     $userAnswers.forEach((answer, index)=>{
         if(answer === $correctAnswers[index]){
             $score+=25;
+            $currentScore.innerText = $score
         }
     })
-
 
 });
 

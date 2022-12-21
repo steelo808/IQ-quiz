@@ -1,12 +1,9 @@
 import express from "express";
 import postgres from "postgres";
-import cors from "cors";
 const app = express();
 const port = 3004;
-
-const sql = postgres({ database: 'quiz' });
-
-
+dotenv.config();
+const sql = postgres(process.env.DATABASE_URL);
 
 
 
